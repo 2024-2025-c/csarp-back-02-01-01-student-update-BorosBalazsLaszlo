@@ -13,6 +13,15 @@ namespace Kreata.Backend.Datas.Entities
             Rendszergazda = rendszergazda;
         }
 
+        public Admin (string a_firstname, string a_lastname, DateTime a_bday, bool rendszergazda)
+        {
+            Id = new Guid();
+            A_Firstname = a_firstname;
+            A_Lastname = a_lastname;
+            A_Bday = a_bday;
+            Rendszergazda = rendszergazda;
+        }
+
         public Admin()
         {
             Id = new Guid();
