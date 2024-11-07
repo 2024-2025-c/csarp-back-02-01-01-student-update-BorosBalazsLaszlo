@@ -1,41 +1,65 @@
 ﻿using Kreata.Backend.Datas.Entities;
 using Kreata.Backend.Repos;
+using Kreta.Backend.Datas.REsponses;
 using Microsoft.AspNetCore.Mvc;
 
-[ApiController]
-[Route("api/[controller]")]
-public class ParentController : ControllerBase
+namespace Kreata.Backend.Controllers
 {
-    private IParentRepo _parentRepo;
-
-    public ParentController(IParentRepo parentRepo)
+    [ApiController]
+    [Route("api/[controller]")]
+    public class ParentController : ControllerBase
     {
-        _parentRepo = parentRepo;
-    }
+        private IParentRepo _parentRepo;
 
-    [HttpGet("{id}")]
-    public async Task<IActionResult> GetBy(Guid id)
-    {
-        Parent? entity = new();
-        if (_parentRepo is not null)
+        public ParentController(IParentRepo parentRepo)
         {
-            entity = await _parentRepo.GetBy(id);
-            if (entity != null)
-                return Ok(entity);
+            _parentRepo = parentRepo;
         }
-        return BadRequest("Az adatok elérhetetlenek!");
-    }
 
-    [HttpGet]
-    public async Task<IActionResult> SelectAllRecordToListAsync()
-    {
-        List<Parent>? users = new();
-
-        if (_parentRepo != null)
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetBy(Guid id)
         {
-            users = await _parentRepo.GetAll();
-            return Ok(users);
+            Parent? entity = new();
+            if (_parentRepo is not null)
+            {
+                entity = await _parentRepo.GetBy(id);
+                if (entity != null)
+                    return Ok(entity);
+            }
+            return BadRequest("Az adatok elérhetetlenek!");
         }
-        return BadRequest("Az adatok elérhetetlenek!");
+
+        [HttpGet]
+        public async Task<IActionResult> SelectAllRecordToListAsync()
+        {
+            List<Parent>? users = new();
+
+            if (_parentRepo != null)
+            {
+                users = await _parentRepo.GetAll();
+                return Ok(users);
+            }
+            return BadRequest("Az adatok elérhetetlenek!");
+        }
+
+        [HttpPut()]
+        public async Task<ActionResult> UpdateParentAsync(Parent entity)
+        {
+            ControllerResponse response = new();
+            if (_parentRepo is not null)
+            {
+                response = await _parentRepo.UpdateParentAsync(entity);
+                if (response.HasError)
+                {
+                    return BadRequest(response);
+                }
+                else
+                {
+                    return Ok(response);
+                }
+            }
+            response.ClearAddError("Az adatok frissítés nem lehetséges!");
+            return BadRequest(response);
+        }
     }
 }

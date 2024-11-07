@@ -63,7 +63,7 @@ namespace Kreata.Backend.Context
             {
                 new Parent
                 {
-                     Sz1_Id = Guid.NewGuid(),
+                     Id = Guid.NewGuid(),
                     Sz1_FirstName = "Kovacs",
                     Sz1_LastName = "Moni",
                     Sz1_Bday = new DateTime(1968,02,12),
@@ -72,7 +72,7 @@ namespace Kreata.Backend.Context
                 },
                  new Parent
                 {
-                    Sz1_Id = Guid.NewGuid(),
+                    Id = Guid.NewGuid(),
                     Sz1_FirstName = "Kovacs",
                     Sz1_LastName = "Laszlo",
                     Sz1_Bday = new DateTime(1969,03,22),
@@ -87,7 +87,7 @@ namespace Kreata.Backend.Context
             {
               new Admin()
             {
-                A_Id = new Guid(),
+                Id = Guid.NewGuid(),
                 A_Firstname = "Kovacs",
                 A_Lastname = "Jozsef",
                 A_Bday = new DateTime(1995,02,11),
@@ -95,7 +95,7 @@ namespace Kreata.Backend.Context
             },
             new Admin()
             {
-                A_Id = new Guid(),
+                Id = Guid.NewGuid(),
                 A_Firstname = "Boros",
                 A_Lastname = "Jozsef",
                 A_Bday = new DateTime(1968,02,11),
@@ -109,7 +109,7 @@ namespace Kreata.Backend.Context
             {
               new Dolgozo()
             {
-                D_Id = new Guid(),
+                Id = Guid.NewGuid(),
                 D_Firstname = "Kovacs",
                 D_Lastname = "Sandor",
                 D_Bday = new DateTime(1995,02,11),
@@ -117,7 +117,7 @@ namespace Kreata.Backend.Context
             },
             new Dolgozo()
             {
-               D_Id = new Guid(),
+               Id = Guid.NewGuid(),
                 D_Firstname = "Kovacs",
                 D_Lastname = "Gergo",
                 D_Bday = new DateTime(1995,02,11),
@@ -131,7 +131,7 @@ namespace Kreata.Backend.Context
             {
               new Rendeles()
             {
-                R_Id = new Guid(),
+                Id = Guid.NewGuid(),
                 Cegnev = "Amazon",
                 Torekeny = false,
                 R_Datum = new DateTime(2024,03,22),
@@ -139,7 +139,7 @@ namespace Kreata.Backend.Context
             },
             new Rendeles()
             {
-                R_Id = new Guid(),
+                Id = Guid.NewGuid(),
                 Cegnev = "Microsoft",
                 Torekeny = false,
                 R_Datum = new DateTime(2024,03,22),

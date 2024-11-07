@@ -1,5 +1,6 @@
 using Kreata.Backend.Datas.Entities;
 using Kreata.Backend.Repos;
+using Kreta.Backend.Datas.REsponses;
 using Microsoft.AspNetCore.Mvc;
 
 [ApiController]
@@ -37,5 +38,25 @@ public class TeacherController : ControllerBase
             return Ok(users);
         }
         return BadRequest("Az adatok elérhetetlenek!");
+    }
+
+    [HttpPut()]
+    public async Task<ActionResult> UpdateTeacherAsync(Teacher entity)
+    {
+        ControllerResponse response = new();
+        if (_teacherRepo is not null)
+        {
+            response = await _teacherRepo.UpdateTeacherAsync(entity);
+            if (response.HasError)
+            {
+                return BadRequest(response);
+            }
+            else
+            {
+                return Ok(response);
+            }
+        }
+        response.ClearAddError("Az adatok frissítés nem lehetséges!");
+        return BadRequest(response);
     }
 }

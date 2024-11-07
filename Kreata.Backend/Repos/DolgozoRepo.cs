@@ -17,7 +17,7 @@ public class DolgozoRepo : IDolgozoRepo
     public async Task<Dolgozo?> GetBy(Guid id)
     {
 
-        return await _dbContext.Dolgozok.FirstOrDefaultAsync(p => p.D_Id == id);
+        return await _dbContext.Dolgozok.FirstOrDefaultAsync(p => p.Id == id);
     }
 
     public async Task<List<Dolgozo>> GetAll()

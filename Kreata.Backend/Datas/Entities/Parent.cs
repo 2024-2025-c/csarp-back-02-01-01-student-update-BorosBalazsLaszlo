@@ -4,9 +4,9 @@ namespace Kreata.Backend.Datas.Entities
 {
     public class Parent
     {
-        public Parent(Guid sz1_id, string sz1_firstName, string sz1_lastName, DateTime sz1_bday, string sz1_cim, string sz1_nem, Guid sz2_id, string sz2_firstName, string sz2_lastName, DateTime sz2_bday, string sz2_cim, string sz2_nem)
+        public Parent(Guid id, string sz1_firstName, string sz1_lastName, DateTime sz1_bday, string sz1_cim, string sz1_nem, Guid sz2_id, string sz2_firstName, string sz2_lastName, DateTime sz2_bday, string sz2_cim, string sz2_nem)
         {
-            Sz1_Id = sz1_id;
+            Id = id;
             Sz1_FirstName = sz1_firstName;
             Sz1_LastName = sz1_lastName;
             Sz1_Bday = sz1_bday;
@@ -16,7 +16,7 @@ namespace Kreata.Backend.Datas.Entities
 
         public Parent()
         {
-            Sz1_Id = new Guid();
+            Id = new Guid();
             Sz1_FirstName = string.Empty;
             Sz1_LastName = string.Empty;
             Sz1_Bday = new DateTime();
@@ -26,7 +26,7 @@ namespace Kreata.Backend.Datas.Entities
         }
 
         [Key]
-        public Guid Sz1_Id { get; set; }
+        public Guid Id { get; set; }
         public string Sz1_FirstName { get; set; }
         public string Sz1_LastName { get; set; }
         public DateTime Sz1_Bday { get; set; }

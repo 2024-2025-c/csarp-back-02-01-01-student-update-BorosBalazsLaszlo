@@ -17,7 +17,7 @@ public class ParentRepo : IParentRepo
     public async Task<Parent?> GetBy(Guid id)
     {
 
-        return await _dbContext.Parents.FirstOrDefaultAsync(p => p.Sz1_Id == id);
+        return await _dbContext.Parents.FirstOrDefaultAsync(p => p.Id == id);
     }
 
     public async Task<List<Parent>> GetAll()

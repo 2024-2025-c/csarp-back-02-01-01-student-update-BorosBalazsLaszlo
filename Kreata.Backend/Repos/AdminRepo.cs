@@ -17,7 +17,7 @@ public class AdminRepo : IAdminRepo
     public async Task<Admin?> GetBy(Guid id)
     {
 
-        return await _dbContext.Admins.FirstOrDefaultAsync(p => p.A_Id == id);
+        return await _dbContext.Admins.FirstOrDefaultAsync(p => p.Id == id);
     }
 
     public async Task<List<Admin>> GetAll()

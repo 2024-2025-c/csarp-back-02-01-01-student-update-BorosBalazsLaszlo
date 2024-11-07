@@ -17,7 +17,7 @@ public class RendelesRepo : IRendelesRepo
     public async Task<Rendeles?> GetBy(Guid id)
     {
 
-        return await _dbContext.Rendelesek.FirstOrDefaultAsync(p => p.R_Id == id);
+        return await _dbContext.Rendelesek.FirstOrDefaultAsync(p => p.Id == id);
     }
 
     public async Task<List<Rendeles>> GetAll()
