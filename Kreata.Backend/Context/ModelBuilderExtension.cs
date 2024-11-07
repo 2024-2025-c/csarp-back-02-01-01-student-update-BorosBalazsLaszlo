@@ -57,7 +57,31 @@ namespace Kreata.Backend.Context
                 }
             };
 
-            modelBuilder.Entity<Teacher>().HasData(techers);
+            modelBuilder.Entity<Parent>().HasData(techers);
+
+            List<Parent> parent = new List<Parent>
+            {
+                new Parent
+                {
+                     Sz1_Id = Guid.NewGuid(),
+                    Sz1_FirstName = "Kovacs",
+                    Sz1_LastName = "Moni",
+                    Sz1_Bday = new DateTime(1968,02,12),
+                    Sz1_Cim = "Bekescsaba, Bercsenyi u. 13",
+                    Sz1_Nem = "Nő"
+                },
+                 new Parent
+                {
+                    Sz1_Id = Guid.NewGuid(),
+                    Sz1_FirstName = "Kovacs",
+                    Sz1_LastName = "Laszlo",
+                    Sz1_Bday = new DateTime(1969,03,22),
+                    Sz1_Cim = "Bekescsaba, Bercsenyi u. 13",
+                    Sz1_Nem = "Férfi"
+                },
+            };
+
+            modelBuilder.Entity<Parent>().HasData(parent);
         }
     }
 }

@@ -6,7 +6,7 @@ namespace Kreata.Backend.Repos
     public interface IParentRepo
     {
         Task<List<Parent>> GetAll();
-        Task<Parent?> GetBy(Guid id);
-        Task<ControllerResponse> UpdateParentAsync(Parent Parent;
+        Task<Parent?> GetBy(Guid Sz1_id);
+        Task<ControllerResponse> UpdateParentAsync(Parent Parent);
     }
 }
