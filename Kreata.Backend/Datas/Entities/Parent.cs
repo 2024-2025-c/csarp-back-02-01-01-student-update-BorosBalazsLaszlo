@@ -1,4 +1,6 @@
-﻿namespace Kreata.Backend.Datas.Entities
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Kreata.Backend.Datas.Entities
 {
     public class Parent
     {
@@ -23,6 +25,7 @@
 
         }
 
+        [Key]
         public Guid Sz1_Id { get; set; }
         public string Sz1_FirstName { get; set; }
         public string Sz1_LastName { get; set; }

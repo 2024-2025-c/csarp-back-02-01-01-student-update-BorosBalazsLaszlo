@@ -57,7 +57,7 @@ namespace Kreata.Backend.Context
                 }
             };
 
-            modelBuilder.Entity<Parent>().HasData(techers);
+            modelBuilder.Entity<Teacher>().HasData(techers);
 
             List<Parent> parent = new List<Parent>
             {
@@ -82,6 +82,72 @@ namespace Kreata.Backend.Context
             };
 
             modelBuilder.Entity<Parent>().HasData(parent);
+
+            List<Admin> admin = new List<Admin>
+            {
+              new Admin()
+            {
+                A_Id = new Guid(),
+                A_Firstname = "Kovacs",
+                A_Lastname = "Jozsef",
+                A_Bday = new DateTime(1995,02,11),
+                Rendszergazda = false
+            },
+            new Admin()
+            {
+                A_Id = new Guid(),
+                A_Firstname = "Boros",
+                A_Lastname = "Jozsef",
+                A_Bday = new DateTime(1968,02,11),
+                Rendszergazda = true
+            },
+            };
+
+            modelBuilder.Entity<Admin>().HasData(admin);
+
+            List<Dolgozo> dolgozo = new List<Dolgozo>
+            {
+              new Dolgozo()
+            {
+                D_Id = new Guid(),
+                D_Firstname = "Kovacs",
+                D_Lastname = "Sandor",
+                D_Bday = new DateTime(1995,02,11),
+                Osztalyvezeto = false
+            },
+            new Dolgozo()
+            {
+               D_Id = new Guid(),
+                D_Firstname = "Kovacs",
+                D_Lastname = "Gergo",
+                D_Bday = new DateTime(1995,02,11),
+                Osztalyvezeto = false
+            },
+            };
+
+            modelBuilder.Entity<Dolgozo>().HasData(dolgozo);
+
+            List<Rendeles> rendeles = new List<Rendeles>
+            {
+              new Rendeles()
+            {
+                R_Id = new Guid(),
+                Cegnev = "Amazon",
+                Torekeny = false,
+                R_Datum = new DateTime(2024,03,22),
+                Description = "Processzorok",
+            },
+            new Rendeles()
+            {
+                R_Id = new Guid(),
+                Cegnev = "Microsoft",
+                Torekeny = false,
+                R_Datum = new DateTime(2024,03,22),
+                Description = "Szamitogepek"
+            },
+            };
+
+            modelBuilder.Entity<Rendeles>().HasData(rendeles);
         }
     }
 }
