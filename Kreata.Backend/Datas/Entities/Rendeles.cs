@@ -1,4 +1,6 @@
-﻿namespace Kreata.Backend.Datas.Entities
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Kreata.Backend.Datas.Entities
 {
     public class Rendeles
     {
@@ -19,7 +21,7 @@
             R_Datum = new DateTime();
             Description = string.Empty;
         }
-
+        [Key]
         public Guid R_Id { get; set; }
         public string Cegnev { get; set; }
         public bool Torekeny { get; set; }

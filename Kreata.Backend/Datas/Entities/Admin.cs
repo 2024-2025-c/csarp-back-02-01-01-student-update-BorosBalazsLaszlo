@@ -1,4 +1,6 @@
-﻿namespace Kreata.Backend.Datas.Entities
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Kreata.Backend.Datas.Entities
 {
     public class Admin
     {
@@ -19,7 +21,7 @@
             A_Bday = new DateTime();
             Rendszergazda = false;
         }
-
+        [Key]
         public Guid A_Id { get; set; }
         public string A_Firstname { get; set; }
         public string A_Lastname { get; set; }

@@ -1,4 +1,6 @@
-﻿namespace Kreata.Backend.Datas.Entities
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Kreata.Backend.Datas.Entities
 {
     public class Dolgozo
     {
@@ -19,7 +21,7 @@
             D_Bday = new DateTime();
             Osztalyvezeto = false;
         }
-
+        [Key]
         public Guid D_Id { get; set; }
         public string D_Firstname { get; set; }
         public string D_Lastname { get; set; }

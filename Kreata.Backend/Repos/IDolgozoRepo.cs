@@ -6,7 +6,7 @@ namespace Kreata.Backend.Repos
     public interface IDolgozoRepo
     {
         Task<List<Dolgozo>> GetAll();
-        Task<Dolgozo?> GetBy(Guid Sz1_id);
+        Task<Dolgozo?> GetBy(Guid D_Id);
         Task<ControllerResponse> UpdateDolgozoAsync(Dolgozo dolgozo);
     }
 }

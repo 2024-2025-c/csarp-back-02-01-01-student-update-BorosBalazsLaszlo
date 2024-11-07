@@ -4,22 +4,22 @@ using Microsoft.AspNetCore.Mvc;
 
 [ApiController]
 [Route("api/[controller]")]
-public class RendelesController : ControllerBase
+public class ParentController : ControllerBase
 {
-    private IRendelesRepo _rendelesRepo;
+    private IParentRepo _parentRepo;
 
-    public RendelesController(IRendelesRepo rendelesRepo)
+    public ParentController(IParentRepo parentRepo)
     {
-        _rendelesRepo = rendelesRepo;
+        _parentRepo = parentRepo;
     }
 
     [HttpGet("{id}")]
     public async Task<IActionResult> GetBy(Guid id)
     {
-        Rendeles? entity = new();
-        if (_rendelesRepo is not null)
+        Parent? entity = new();
+        if (_parentRepo is not null)
         {
-            entity = await _rendelesRepo.GetBy(id);
+            entity = await _parentRepo.GetBy(id);
             if (entity != null)
                 return Ok(entity);
         }
@@ -29,11 +29,11 @@ public class RendelesController : ControllerBase
     [HttpGet]
     public async Task<IActionResult> SelectAllRecordToListAsync()
     {
-        List<Rendeles>? users = new();
+        List<Parent>? users = new();
 
-        if (_rendelesRepo != null)
+        if (_parentRepo != null)
         {
-            users = await _rendelesRepo.GetAll();
+            users = await _parentRepo.GetAll();
             return Ok(users);
         }
         return BadRequest("Az adatok elérhetetlenek!");

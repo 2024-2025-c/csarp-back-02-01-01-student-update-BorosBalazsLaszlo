@@ -6,7 +6,7 @@ namespace Kreata.Backend.Repos
     public interface IAdminRepo
     {
         Task<List<Admin>> GetAll();
-        Task<Admin?> GetBy(Guid Sz1_id);
+        Task<Admin?> GetBy(Guid A_Id);
         Task<ControllerResponse> UpdateAdminAsync(Admin admin);
     }
 }
