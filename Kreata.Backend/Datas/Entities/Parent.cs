@@ -4,38 +4,38 @@ namespace Kreata.Backend.Datas.Entities
 {
     public class Parent
     {
-        public Parent(Guid id, string sz1_firstName, string sz1_lastName, DateTime sz1_bday, string sz1_cim, string sz1_nem, Guid sz2_id, string sz2_firstName, string sz2_lastName, DateTime sz2_bday, string sz2_cim, string sz2_nem)
+        public Parent(Guid id, string sz_firstName, string sz_lastName, DateTime sz_bday, string sz_cim, string sz_nem, Guid sz2_id, string sz2_firstName, string sz2_lastName, DateTime sz2_bday, string sz2_cim, string sz2_nem)
         {
             Id = id;
-            Sz1_FirstName = sz1_firstName;
-            Sz1_LastName = sz1_lastName;
-            Sz1_Bday = sz1_bday;
-            Sz1_Cim = sz1_cim;
-            Sz1_Nem = sz1_nem;
+            sz_FirstName = sz_firstName;
+            sz_LastName = sz_lastName;
+            sz_Bday = sz_bday;
+            sz_Cim = sz_cim;
+            sz_Nem = sz_nem;
         }
 
         public Parent()
         {
             Id = new Guid();
-            Sz1_FirstName = string.Empty;
-            Sz1_LastName = string.Empty;
-            Sz1_Bday = new DateTime();
-            Sz1_Cim = string.Empty;
-            Sz1_Nem = string.Empty;
+            sz_FirstName = string.Empty;
+            sz_LastName = string.Empty;
+            sz_Bday = new DateTime();
+            sz_Cim = string.Empty;
+            sz_Nem = string.Empty;
 
         }
 
         [Key]
         public Guid Id { get; set; }
-        public string Sz1_FirstName { get; set; }
-        public string Sz1_LastName { get; set; }
-        public DateTime Sz1_Bday { get; set; }
-        public string Sz1_Cim { get; set; }
-        public string Sz1_Nem { get; set; }
+        public string sz_FirstName { get; set; }
+        public string sz_LastName { get; set; }
+        public DateTime sz_Bday { get; set; }
+        public string sz_Cim { get; set; }
+        public string sz_Nem { get; set; }
 
         public override string ToString()
         {
-            return $"Szülő: {Sz1_FirstName} {Sz1_LastName}";
+            return $"Szülő: {sz_FirstName} {sz_LastName}";
         }
     }
 }

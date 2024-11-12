@@ -64,20 +64,20 @@ namespace Kreata.Backend.Context
                 new Parent
                 {
                      Id = Guid.NewGuid(),
-                    Sz1_FirstName = "Kovacs",
-                    Sz1_LastName = "Moni",
-                    Sz1_Bday = new DateTime(1968,02,12),
-                    Sz1_Cim = "Bekescsaba, Bercsenyi u. 13",
-                    Sz1_Nem = "Nő"
+                    sz_FirstName = "Kovacs",
+                    sz_LastName = "Moni",
+                    sz_Bday = new DateTime(1968,02,12),
+                    sz_Cim = "Bekescsaba, Bercsenyi u. 13",
+                    sz_Nem = "Nő"
                 },
                  new Parent
                 {
                     Id = Guid.NewGuid(),
-                    Sz1_FirstName = "Kovacs",
-                    Sz1_LastName = "Laszlo",
-                    Sz1_Bday = new DateTime(1969,03,22),
-                    Sz1_Cim = "Bekescsaba, Bercsenyi u. 13",
-                    Sz1_Nem = "Férfi"
+                    sz_FirstName = "Kovacs",
+                    sz_LastName = "Laszlo",
+                    sz_Bday = new DateTime(1969,03,22),
+                    sz_Cim = "Bekescsaba, Bercsenyi u. 13",
+                    sz_Nem = "Férfi"
                 },
             };
 
